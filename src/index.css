@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-green-deep: #1D5C31;
+  --color-green-primary: #2F844B;
+  --color-green-sage: #69A96C;
+  --color-green-pale: #E6F3E8;
+  --color-green-muted: #A8CEAD;
+  --color-orange-hot: #FE710D;
+  --color-orange-bright: #FF8C42;
+  --color-orange-pale: #FFF0E6;
+  --color-yellow-accent: #F3CE49;
+  --color-charcoal: #50534C;
+  --color-cream: #FAF8F5;
+  --color-gray-line: #DDE6DF;
+  --font-sans: 'Outfit', sans-serif;
+  --font-display: 'Nunito', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #FAF8F5;
+  color: #50534C;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #A8CEAD; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #2F844B; }
+
+.screen-fade {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.toggle {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.toggle input { opacity: 0; width: 0; height: 0; }
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #C5D5C8;
+  border-radius: 13px;
+  transition: 0.3s;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.toggle input:checked + .toggle-slider { background-color: #2F844B; }
+.toggle input:checked + .toggle-slider::before { transform: translateX(22px); }

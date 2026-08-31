@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recicla-me Se For Capaz — Wireframe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #FAF8F5;
+      color: #50534C;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #1D5C31;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .header-icon {
+      width: 44px;
+      height: 44px;
+      background: #FE710D;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .header-title {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      color: white;
+      line-height: 1.1;
+    }
+
+    .header-subtitle {
+      font-size: 12px;
+      color: #A8CEAD;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .header-badge {
+      background: rgba(243,206,73,0.2);
+      border: 1px solid rgba(243,206,73,0.4);
+      color: #F3CE49;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .hero {
+      padding: 40px 32px 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: clamp(24px, 4vw, 36px);
+      color: #1D5C31;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span { color: #FE710D; }
+
+    .hero p {
+      font-size: 15px;
+      color: #8A9088;
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .btn-primary {
+      background: #FE710D;
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 16px rgba(254,113,13,0.35);
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.9; }
+
+    .btn-secondary {
+      background: #E6F3E8;
+      color: #2F844B;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover { background: #C8E8CC; }
+
+    .embed-container {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid #DDE6DF;
+      box-shadow: 0 8px 40px rgba(47,132,75,0.12);
+      margin: 0 auto;
+      max-width: 960px;
+    }
+
+    .embed-bar {
+      background: #F5F5F5;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid #E8E8E8;
+    }
+
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot-red   { background: #FF5F56; }
+    .dot-yellow{ background: #FFBD2E; }
+    .dot-green { background: #27C93F; }
+
+    .embed-url {
+      flex: 1;
+      background: white;
+      border: 1px solid #E0E0E0;
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: #8A9088;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 680px;
+      border: none;
+    }
+
+    .screens-grid {
+      max-width: 960px;
+      margin: 48px auto 0;
+      padding: 0 32px;
+    }
+
+    .screens-grid h2 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: #1D5C31;
+      margin-bottom: 20px;
+    }
+
+    .screens-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .screen-card {
+      background: white;
+      border: 1.5px solid #DDE6DF;
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .screen-num {
+      width: 36px;
+      height: 36px;
+      background: #E6F3E8;
+      color: #2F844B;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .screen-info h3 { font-size: 14px; font-weight: 700; color: #50534C; margin-bottom: 3px; }
+    .screen-info p  { font-size: 12px; color: #8A9088; line-height: 1.5; }
+
+    .palette {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 32px 48px;
+    }
+
+    .palette h2 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: #1D5C31;
+      margin-bottom: 20px;
+    }
+
+    .swatches {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      border: 1.5px solid #DDE6DF;
+      border-radius: 12px;
+      padding: 10px 16px;
+    }
+
+    .swatch-dot { width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0; }
+    .swatch-name { font-size: 12px; font-weight: 700; color: #50534C; }
+    .swatch-hex  { font-size: 11px; color: #8A9088; }
+
+    footer {
+      background: #1D5C31;
+      color: #A8CEAD;
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+    }
+
+    footer a { color: #F3CE49; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .hero, .screens-grid, .palette { padding-left: 20px; padding-right: 20px; }
+      iframe { height: 500px; }
+      header { padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-brand">
+      <div class="header-icon">♻️</div>
+      <div>
+        <div class="header-title">Recicla-me Se For Capaz</div>
+        <div class="header-subtitle">Canoinhas · Santa Catarina · Brasil</div>
+      </div>
+    </div>
+    <span class="header-badge">Wireframe · Figma Make</span>
+  </header>
+
+  <div class="hero">
+    <h1>Sistema de alertas<br>de <span>coleta de lixo</span></h1>
+    <p>
+      Protótipo responsivo (mobile + desktop) para o app que lembra os moradores de Canoinhas, SC
+      sobre os dias de coleta de lixo comum e seletivo no seu bairro.
+    </p>
+    <div class="cta-row">
+      <a class="btn-primary" href="https://www.figma.com/make/Yi4VkYmgfeQLVUqnhLCcr2/Wireframe-para-Recicla-me-Se-For-Capaz" target="_blank">
+        🔗 Abrir no Figma Make
+      </a>
+      <a class="btn-secondary" href="https://github.com" target="_blank">
+        ⭐ Ver código no GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Embed -->
+  <div style="padding: 0 32px; max-width: 960px; margin: 0 auto;">
+    <div class="embed-container">
+      <div class="embed-bar">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        <div class="embed-url">figma.com/make · Wireframe-para-Recicla-me-Se-For-Capaz</div>
+      </div>
+      <iframe
+        src="https://www.figma.com/make/Yi4VkYmgfeQLVUqnhLCcr2/Wireframe-para-Recicla-me-Se-For-Capaz?fullscreen=1"
+        allowfullscreen
+        title="Wireframe Recicla-me Se For Capaz"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Screens -->
+  <div class="screens-grid">
+    <h2>🗂️ Telas do sistema</h2>
+    <div class="screens-list">
+      <div class="screen-card">
+        <div class="screen-num">1</div>
+        <div class="screen-info">
+          <h3>Onboarding</h3>
+          <p>Boas-vindas, apresentação do serviço e botão "Começar"</p>
+        </div>
+      </div>
+      <div class="screen-card">
+        <div class="screen-num">2</div>
+        <div class="screen-info">
+          <h3>Cadastro</h3>
+          <p>Nome, bairro, endereço e canal de notificação preferido</p>
+        </div>
+      </div>
+      <div class="screen-card">
+        <div class="screen-num">3</div>
+        <div class="screen-info">
+          <h3>Painel (Home)</h3>
+          <p>Próxima coleta em destaque com contagem regressiva</p>
+        </div>
+      </div>
+      <div class="screen-card">
+        <div class="screen-num">4</div>
+        <div class="screen-info">
+          <h3>Calendário</h3>
+          <p>Visualização semanal e mensal das coletas por tipo</p>
+        </div>
+      </div>
+      <div class="screen-card">
+        <div class="screen-num">5</div>
+        <div class="screen-info">
+          <h3>Alertas</h3>
+          <p>Histórico de notificações e configuração de lembretes</p>
+        </div>
+      </div>
+      <div class="screen-card">
+        <div class="screen-num">6</div>
+        <div class="screen-info">
+          <h3>Meu Bairro</h3>
+          <p>Dias de coleta, mapa e reporte de problemas</p>
+        </div>
+      </div>
+      <div class="screen-card">
+        <div class="screen-num">7</div>
+        <div class="screen-info">
+          <h3>Perfil</h3>
+          <p>Dados cadastrais e preferências de notificação</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Palette -->
+  <div class="palette">
+    <h2>🎨 Paleta de cores</h2>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-dot" style="background:#2F844B"></div>
+        <div><div class="swatch-name">Verde primário</div><div class="swatch-hex">#2F844B · Seletiva</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-dot" style="background:#FE710D"></div>
+        <div><div class="swatch-name">Laranja ação</div><div class="swatch-hex">#FE710D · Lixo comum</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-dot" style="background:#F3CE49; border:1px solid #e0c040"></div>
+        <div><div class="swatch-name">Amarelo destaque</div><div class="swatch-hex">#F3CE49 · Badges</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-dot" style="background:#69A96C"></div>
+        <div><div class="swatch-name">Verde-sálvia</div><div class="swatch-hex">#69A96C · Apoio</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-dot" style="background:#50534C"></div>
+        <div><div class="swatch-name">Cinza-chumbo</div><div class="swatch-hex">#50534C · Texto</div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Desenvolvido com
+    <a href="https://figma.com/make" target="_blank">Figma Make</a> ·
+    React 19 · Vite 8 · Tailwind CSS v4 ·
+    Canoinhas, SC, Brasil
+  </footer>
+
+</body>
+</html>

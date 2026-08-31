@@ -1,0 +1,10 @@
+{
+  "description": "Receive timely alerts for regular and recyclable waste collection days in Canoinhas, ensuring residents never miss a pickup and manage waste responsibly.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
